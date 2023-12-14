@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "RN-v2",
-    "slug": "RN-v2",
+    "name": "front-rn-v2",
+    "slug": "front-rn-v2",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -16,15 +16,13 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.hawnbin.RN.v2"
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.hawnbin.RNv2"
+      }
     },
     "web": {
       "bundler": "metro",
