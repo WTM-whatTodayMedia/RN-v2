@@ -10,38 +10,38 @@ import { Image } from "expo-image";
 import ListBox from "../../components/ListBox";
 
 export default function TabOneScreen() {
-  const [Initdata, setInitData] = useState<listProps[]>([]);
-  const [list, setList] = useState<listProps[]>([]);
-  const [recommendImg, setRecommendImg] = useState<{
-    imgUrl?: string;
-    imgTitle?: string;
-  }>({});
+  // const [Initdata, setInitData] = useState<listProps[]>([]);
+  // const [list, setList] = useState<listProps[]>([]);
+  // const [recommendImg, setRecommendImg] = useState<{
+  //   imgUrl?: string;
+  //   imgTitle?: string;
+  // }>({});
 
-  const onHandleCategoryClick = async (category: string) => {
-    if (category === "영화" || category === "드라마") {
-      const filterList: listProps[] = await getFilterList(category);
-      setList(filterList);
-    } else setList(Initdata);
-  };
+  // const onHandleCategoryClick = async (category: string) => {
+  //   if (category === "영화" || category === "드라마") {
+  //     const filterList: listProps[] = await getFilterList(category);
+  //     setList(filterList);
+  //   } else setList(Initdata);
+  // };
 
-  useEffect(() => {
-    async function initDataFun() {
-      const data: listProps[] = await fetchList();
-      setInitData(data);
-      setList(data);
-      const RN = legnthRn(data);
-      setRecommendImg({
-        imgUrl:
-          data[RN]?.cover?.external?.url ?? data[RN]?.cover?.file?.url ?? "",
-        imgTitle: data[RN]?.properties.Name.title[0].text.content,
-      });
-    }
-    initDataFun();
-  }, []);
+  // useEffect(() => {
+  //   async function initDataFun() {
+  //     const data: listProps[] = await fetchList();
+  //     setInitData(data);
+  //     setList(data);
+  //     const RN = legnthRn(data);
+  //     setRecommendImg({
+  //       imgUrl:
+  //         data[RN]?.cover?.external?.url ?? data[RN]?.cover?.file?.url ?? "",
+  //       imgTitle: data[RN]?.properties.Name.title[0].text.content,
+  //     });
+  //   }
+  //   initDataFun();
+  // }, []);
 
   return (
     <View style={S.Wrapper}>
-      <Header onCategoryClick={onHandleCategoryClick} />
+      {/* <Header onCategoryClick={onHandleCategoryClick} />
       <ScrollView style={S.List} horizontal={false}>
         <Image
           source={recommendImg.imgUrl ?? ""}
@@ -62,7 +62,7 @@ export default function TabOneScreen() {
             <Text>로딩중...</Text>
           )}
         </View>
-      </ScrollView>
+      </ScrollView> */}
     </View>
   );
 }
